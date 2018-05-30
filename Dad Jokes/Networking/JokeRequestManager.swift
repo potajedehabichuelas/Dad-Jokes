@@ -20,7 +20,7 @@ class JokeRequestManager {
         apollo.fetch(query: dadJokeQuery, cachePolicy: .fetchIgnoringCacheData, queue: .global(), resultHandler: { result, error in
             
             if let err = error {
-                print(err)
+                print(err.localizedDescription)
                 completion(nil)
                 return
             }
