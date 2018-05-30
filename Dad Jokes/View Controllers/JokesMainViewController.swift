@@ -9,7 +9,7 @@
 import UIKit
 import NVActivityIndicatorView
 
-class ViewController: UIViewController {
+class JokesMainViewController: UIViewController {
 
     @IBOutlet weak var jokeText: UITextView!
     @IBOutlet weak var activityIndicator: NVActivityIndicatorView!
@@ -33,12 +33,13 @@ class ViewController: UIViewController {
     }
     
     func setNewJoke() {
-        let warnign = 1
         DispatchQueue.main.async {
             if self.jokesModelController.jokesCount > 0 {
                 self.jokeText.text = self.jokesModelController.joke(at: 0).joke
                 //Remove used joke
                 self.jokesModelController.removeJoke(at: 0)
+                //Check if we might need to refill the cold jokes storage!
+                self.jokesModelController.checkJokesStorageAmount()
             }
         }
     }

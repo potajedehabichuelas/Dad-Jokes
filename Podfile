@@ -13,6 +13,7 @@ target 'Dad Jokes' do
   target 'Dad JokesTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Apollo'
   end
 
   target 'Dad JokesUITests' do
