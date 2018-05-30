@@ -1,7 +1,13 @@
-query JokeDetails {
+
+
+fragment JokeDetails on Joke {
+    id
+    joke
+    permalink
+}
+
+query DadJoke {
     joke {
-        id
-        joke
-        permalink
+        ...JokeDetails
     }
 }

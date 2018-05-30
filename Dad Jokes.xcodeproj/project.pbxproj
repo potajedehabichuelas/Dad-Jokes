@@ -15,7 +15,15 @@
 		48151DB120BE5F6F00458ACD /* Dad_JokesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48151DB020BE5F6F00458ACD /* Dad_JokesUITests.swift */; };
 		48151DC520BE67B600458ACD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48151DC420BE67B600458ACD /* ViewController.swift */; };
 		4891C26A20BE6F0500D961D4 /* Joke.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 4891C26920BE6F0500D961D4 /* Joke.graphql */; };
-		4891C26E20BE702400D961D4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4891C26D20BE702400D961D4 /* API.swift */; };
+		4891C27220BE77D500D961D4 /* DJStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4891C27120BE77D500D961D4 /* DJStorage.swift */; };
+		4891C27420BE7D0B00D961D4 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4891C27320BE7D0A00D961D4 /* API.swift */; };
+		4891C27620BE7E8200D961D4 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4891C27520BE7E8200D961D4 /* Joke.swift */; };
+		4891C27A20BE908F00D961D4 /* DJStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4891C27920BE908F00D961D4 /* DJStorageTests.swift */; };
+		4891C27B20BE90EB00D961D4 /* DJStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4891C27120BE77D500D961D4 /* DJStorage.swift */; };
+		4891C27C20BE914000D961D4 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4891C27520BE7E8200D961D4 /* Joke.swift */; };
+		4891C27F20BE934B00D961D4 /* JokesModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4891C27E20BE934B00D961D4 /* JokesModelController.swift */; };
+		4891C28120BE9CA500D961D4 /* JokesModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4891C28020BE9CA500D961D4 /* JokesModelControllerTests.swift */; };
+		4891C28220BE9CD300D961D4 /* JokesModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4891C27E20BE934B00D961D4 /* JokesModelController.swift */; };
 		7DFE9BB540F1A1A7DE4BB7FD /* Pods_Dad_JokesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0247C40D14087B9F7B3676 /* Pods_Dad_JokesTests.framework */; };
 		A8CFBB764656EC26DD5A3410 /* Pods_Dad_JokesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14396819B62C2289CC2AD46 /* Pods_Dad_JokesUITests.framework */; };
 		D6C626134AF7AF0D4632129B /* Pods_Dad_Jokes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74DF1413CA0FBE1EF60DF65 /* Pods_Dad_Jokes.framework */; };
@@ -53,7 +61,12 @@
 		48151DB220BE5F6F00458ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48151DC420BE67B600458ACD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4891C26920BE6F0500D961D4 /* Joke.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Joke.graphql; sourceTree = "<group>"; };
-		4891C26D20BE702400D961D4 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = "Dad Jokes/API.swift"; sourceTree = SOURCE_ROOT; };
+		4891C27120BE77D500D961D4 /* DJStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJStorage.swift; sourceTree = "<group>"; };
+		4891C27320BE7D0A00D961D4 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = "Dad Jokes/API.swift"; sourceTree = SOURCE_ROOT; };
+		4891C27520BE7E8200D961D4 /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
+		4891C27920BE908F00D961D4 /* DJStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJStorageTests.swift; sourceTree = "<group>"; };
+		4891C27E20BE934B00D961D4 /* JokesModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesModelController.swift; sourceTree = "<group>"; };
+		4891C28020BE9CA500D961D4 /* JokesModelControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesModelControllerTests.swift; sourceTree = "<group>"; };
 		6AC66C04D6031FDFCA1C889D /* Pods-Dad JokesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dad JokesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dad JokesTests/Pods-Dad JokesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6EA4A29ED7BFD44CEBE0C7E0 /* Pods-Dad JokesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dad JokesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dad JokesTests/Pods-Dad JokesTests.release.xcconfig"; sourceTree = "<group>"; };
 		92FD9A09E20C8BCA681EEF61 /* Pods-Dad JokesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dad JokesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dad JokesUITests/Pods-Dad JokesUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -118,8 +131,11 @@
 		48151D8F20BE5F6D00458ACD /* Dad Jokes */ = {
 			isa = PBXGroup;
 			children = (
+				4891C27720BE8E8800D961D4 /* Helpers */,
+				4891C27820BE8E8900D961D4 /* Views */,
 				4891C26820BE6ECD00D961D4 /* GraphQL */,
 				48151DC720BE67CE00458ACD /* Networking */,
+				4891C27D20BE930F00D961D4 /* ModelController */,
 				48151DC620BE67CE00458ACD /* Storage */,
 				48151DC220BE67B600458ACD /* Objects */,
 				48151DC320BE67B600458ACD /* View Controllers */,
@@ -138,6 +154,8 @@
 			children = (
 				48151DA520BE5F6F00458ACD /* Dad_JokesTests.swift */,
 				48151DA720BE5F6F00458ACD /* Info.plist */,
+				4891C27920BE908F00D961D4 /* DJStorageTests.swift */,
+				4891C28020BE9CA500D961D4 /* JokesModelControllerTests.swift */,
 			);
 			path = "Dad JokesTests";
 			sourceTree = "<group>";
@@ -161,6 +179,7 @@
 		48151DC220BE67B600458ACD /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				4891C27520BE7E8200D961D4 /* Joke.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -176,6 +195,7 @@
 		48151DC620BE67CE00458ACD /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				4891C27120BE77D500D961D4 /* DJStorage.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -190,10 +210,32 @@
 		4891C26820BE6ECD00D961D4 /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
-				4891C26D20BE702400D961D4 /* API.swift */,
+				4891C27320BE7D0A00D961D4 /* API.swift */,
 				4891C26920BE6F0500D961D4 /* Joke.graphql */,
 			);
 			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		4891C27720BE8E8800D961D4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		4891C27820BE8E8900D961D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4891C27D20BE930F00D961D4 /* ModelController */ = {
+			isa = PBXGroup;
+			children = (
+				4891C27E20BE934B00D961D4 /* JokesModelController.swift */,
+			);
+			path = ModelController;
 			sourceTree = "<group>";
 		};
 		AB3E90273BE3903B4E60DFA1 /* Pods */ = {
@@ -446,7 +488,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				48151DC520BE67B600458ACD /* ViewController.swift in Sources */,
-				4891C26E20BE702400D961D4 /* API.swift in Sources */,
+				4891C27620BE7E8200D961D4 /* Joke.swift in Sources */,
+				4891C27220BE77D500D961D4 /* DJStorage.swift in Sources */,
+				4891C27420BE7D0B00D961D4 /* API.swift in Sources */,
+				4891C27F20BE934B00D961D4 /* JokesModelController.swift in Sources */,
 				48151D9120BE5F6D00458ACD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,7 +500,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4891C27B20BE90EB00D961D4 /* DJStorage.swift in Sources */,
 				48151DA620BE5F6F00458ACD /* Dad_JokesTests.swift in Sources */,
+				4891C27C20BE914000D961D4 /* Joke.swift in Sources */,
+				4891C27A20BE908F00D961D4 /* DJStorageTests.swift in Sources */,
+				4891C28220BE9CD300D961D4 /* JokesModelController.swift in Sources */,
+				4891C28120BE9CA500D961D4 /* JokesModelControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
