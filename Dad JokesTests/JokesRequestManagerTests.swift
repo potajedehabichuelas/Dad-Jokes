@@ -31,10 +31,11 @@ class JokesRequestManagerTests: XCTestCase {
         
         JokeRequestManager.sharedInstance.queryDadJoke(completion: { joke in
             
-            XCTAssertNotNil(joke)
-            XCTAssertNotNil(joke.id)
-            XCTAssertNotNil(joke.joke)
-            XCTAssertNotNil(joke.permalink)
+            guard let jk = joke else {  XCTFail("Return object is nil"); return}
+    
+            XCTAssertNotNil(jk.id)
+            XCTAssertNotNil(jk.joke)
+            XCTAssertNotNil(jk.permalink)
             
             ex.fulfill()
         })
