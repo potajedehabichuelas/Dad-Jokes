@@ -24,6 +24,7 @@
 		4891C27F20BE934B00D961D4 /* JokeModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4891C27E20BE934B00D961D4 /* JokeModelController.swift */; };
 		4891C28120BE9CA500D961D4 /* JokeModelControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4891C28020BE9CA500D961D4 /* JokeModelControllerTests.swift */; };
 		4891C28220BE9CD300D961D4 /* JokeModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4891C27E20BE934B00D961D4 /* JokeModelController.swift */; };
+		4891C28420BF1B9300D961D4 /* JokeRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4891C28320BF1B9300D961D4 /* JokeRequestManager.swift */; };
 		7DFE9BB540F1A1A7DE4BB7FD /* Pods_Dad_JokesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF0247C40D14087B9F7B3676 /* Pods_Dad_JokesTests.framework */; };
 		A8CFBB764656EC26DD5A3410 /* Pods_Dad_JokesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E14396819B62C2289CC2AD46 /* Pods_Dad_JokesUITests.framework */; };
 		D6C626134AF7AF0D4632129B /* Pods_Dad_Jokes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B74DF1413CA0FBE1EF60DF65 /* Pods_Dad_Jokes.framework */; };
@@ -67,6 +68,7 @@
 		4891C27920BE908F00D961D4 /* DJStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJStorageTests.swift; sourceTree = "<group>"; };
 		4891C27E20BE934B00D961D4 /* JokeModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModelController.swift; sourceTree = "<group>"; };
 		4891C28020BE9CA500D961D4 /* JokeModelControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeModelControllerTests.swift; sourceTree = "<group>"; };
+		4891C28320BF1B9300D961D4 /* JokeRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeRequestManager.swift; sourceTree = "<group>"; };
 		6AC66C04D6031FDFCA1C889D /* Pods-Dad JokesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dad JokesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dad JokesTests/Pods-Dad JokesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6EA4A29ED7BFD44CEBE0C7E0 /* Pods-Dad JokesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dad JokesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dad JokesTests/Pods-Dad JokesTests.release.xcconfig"; sourceTree = "<group>"; };
 		92FD9A09E20C8BCA681EEF61 /* Pods-Dad JokesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dad JokesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dad JokesUITests/Pods-Dad JokesUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,7 +146,6 @@
 				48151D9720BE5F6F00458ACD /* Assets.xcassets */,
 				48151D9920BE5F6F00458ACD /* LaunchScreen.storyboard */,
 				48151D9C20BE5F6F00458ACD /* Info.plist */,
-				48151DBF20BE679800458ACD /* Resources */,
 			);
 			path = "Dad Jokes";
 			sourceTree = "<group>";
@@ -167,13 +168,6 @@
 				48151DB220BE5F6F00458ACD /* Info.plist */,
 			);
 			path = "Dad JokesUITests";
-			sourceTree = "<group>";
-		};
-		48151DBF20BE679800458ACD /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		48151DC220BE67B600458ACD /* Objects */ = {
@@ -203,6 +197,7 @@
 		48151DC720BE67CE00458ACD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				4891C28320BF1B9300D961D4 /* JokeRequestManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -470,10 +465,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Dad Jokes/Pods-Dad Jokes-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apollo.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -493,6 +492,7 @@
 				4891C27420BE7D0B00D961D4 /* API.swift in Sources */,
 				4891C27F20BE934B00D961D4 /* JokeModelController.swift in Sources */,
 				48151D9120BE5F6D00458ACD /* AppDelegate.swift in Sources */,
+				4891C28420BF1B9300D961D4 /* JokeRequestManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,17 +2,29 @@ PODS:
   - Apollo (0.8.0):
     - Apollo/Core (= 0.8.0)
   - Apollo/Core (0.8.0)
+  - NVActivityIndicatorView (4.2.1):
+    - NVActivityIndicatorView/Presenter (= 4.2.1)
+  - NVActivityIndicatorView/Presenter (4.2.1)
+  - SwiftMessages (4.1.4):
+    - SwiftMessages/App (= 4.1.4)
+  - SwiftMessages/App (4.1.4)
 
 DEPENDENCIES:
   - Apollo
+  - NVActivityIndicatorView
+  - SwiftMessages
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Apollo
+    - NVActivityIndicatorView
+    - SwiftMessages
 
 SPEC CHECKSUMS:
   Apollo: 66e0f52289551545adb7ecdd994e713fdbae26eb
+  NVActivityIndicatorView: 8068ba3ad39cb44cbaab25d89ff2546b3f092681
+  SwiftMessages: 2c33fdee8b8f38dfc7e1036684456b505891da8c
 
-PODFILE CHECKSUM: a3d14e6e294a595a3e6fde2d75deae9f7ce043f1
+PODFILE CHECKSUM: acfd8597bdb0e8b0f942b0685b994d4bf0289320
 
 COCOAPODS: 1.5.0
