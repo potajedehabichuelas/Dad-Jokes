@@ -28,9 +28,11 @@ class Dad_JokesUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testUI() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCUIApplication().buttons["😂 Crack a joke! 😂"].tap()
+        
     }
     
 }
