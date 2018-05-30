@@ -25,7 +25,7 @@ class JokeModelController {
     func checkJokesStorageAmount() {
         //Checks the amount of jokes stored and add some if required
         if self.jokes.count < JokeModelController.jokesRefillThreshold {
-            self.addNewJokes { () in }
+            self.addNewJokes(amount: JokeModelController.jokesRefillThreshold, completion: { () in })
         }
     }
     
@@ -34,23 +34,24 @@ class JokeModelController {
         self.jokes = DJStorage.retrieveJokes()
         //If we retrieved less than X jokes, we request a few more so we can be funny on time
         if self.jokes.count <= JokeModelController.jokesRefillThreshold {
-            self.addNewJokes { () in
+            self.addNewJokes(amount: 1, completion: {
                 completion()
-            }
+            })
         } else {
             completion()
         }
+        
     }
     
-    private func addNewJokes(completion: @escaping () -> Void) {
+    private func addNewJokes(amount: Int ,completion: @escaping () -> Void) {
         var jokesReceived = 0
         //This ideally would be achieved by requesting a batch of jokes, but server doesn't support pagination ?
-        for _ in 0..<JokeModelController.jokesRefillThreshold {
+        for _ in 0..<amount {
             JokeRequestManager.sharedInstance.queryDadJoke(completion: { joke in
-                guard let id = joke.id, let jokeText = joke.joke, let link = joke.permalink else { return }
+                guard let jk = joke, let id = jk.id, let jokeText = jk.joke, let link = jk.permalink else { return }
                 self.createJoke(id: id, text: jokeText, permaLink: link)
                 jokesReceived += 1
-                if jokesReceived == JokeModelController.jokesRefillThreshold {
+                if jokesReceived == amount {
                     completion()
                 }
             })
