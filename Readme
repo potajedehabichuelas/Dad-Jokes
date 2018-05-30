@@ -1,0 +1,32 @@
+Notes about project
+
+There shouldn't be any special needs to run this project.
+
+How it works? 
+
+The app fetches jokes from the provided api using GraphQL. Now, to optimize it, and to make it available offline
+(up to certain level), jokes are stored using NSKeyedArchiver (keeping it simple), and whenever a joke is used, it is also 
+checked that we're not running out of jokes, so in case we're low, we request a new batch of jokes and store it. 
+The amount of jokes we want to store is also editable.
+
+Other thoughts:
+
+To be able to use GraphQL I've the client Apollo. I believe there are lighter solutions but this one was the best documented
+one so that's why I've sticked with this (I never used GraphQL before so that point is important). Also Apollo builds data types
+within an API file that makes everything super easy to set up and get started
+
+Unfortunately the server schema doesn't seem to support pagination or returning multiple items in the same request (up to the extent
+of my knowledge, I could also be wrong as I said, I have just started myself with GraphQL). This would be the ideal way to
+request and map Jokes into the app.
+
+I've noticed sometimes the request returns the same joke repeated, this is probably because the requests to refill the storage
+are all made at once. To overcome this issue it could be possible to :
+      - Make a function to filter repeated jokes using 'id' property
+      - Place a very small delay in between requests (as the returned jokes are random, they're probably based on a timestamp (?))
+
+There is a fairly simple UITest in there too, If we wanted to improve it somehow, we could mock the request return, etc.
+
+
+That's all I can think of for now. If you have any questions regarding anything in the project, please do get in touch.
+
+
