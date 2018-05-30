@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4Q-jH-Jac">
-                                <rect key="frame" x="138" y="318.5" width="100" height="100"/>
+                                <rect key="frame" x="138" y="283.5" width="100" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDH-L2-DEk" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
                                         <rect key="frame" x="20" y="10" width="65" height="80"/>
@@ -82,7 +82,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="c4Q-jH-Jac" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="35" id="QkQ-hL-kTp"/>
+                            <constraint firstItem="c4Q-jH-Jac" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QkQ-hL-kTp"/>
                             <constraint firstItem="54b-u8-5NU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-85" id="Rak-6l-Wcr"/>
                             <constraint firstItem="c4Q-jH-Jac" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vsu-zw-OCx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="54b-u8-5NU" secondAttribute="trailing" constant="28" id="W9U-DB-yHm"/>
