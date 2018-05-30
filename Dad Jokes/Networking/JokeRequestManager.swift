@@ -13,12 +13,19 @@ class JokeRequestManager {
     static let sharedInstance = JokeRequestManager()
 
     // Fetch a Joke through GraphQL
-    func queryDadJoke(completion: @escaping (DadJokeQuery.Data.Joke) -> Void) {
+    func queryDadJoke(completion: @escaping (DadJokeQuery.Data.Joke?) -> Void) {
         
         let dadJokeQuery = DadJokeQuery()
 
         apollo.fetch(query: dadJokeQuery, cachePolicy: .fetchIgnoringCacheData, queue: .global(), resultHandler: { result, error in
-            guard let joke = result?.data?.joke else { return }
+            
+            if let err = error {
+                print(err)
+                completion(nil)
+                return
+            }
+            
+            guard let joke = result?.data?.joke else { completion(nil); return }
             completion(joke)
         })        
     }
