@@ -7,19 +7,58 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var jokeText: UITextView!
+    @IBOutlet weak var activityIndicator: NVActivityIndicatorView!
+    @IBOutlet weak var activityIndicatorFrame: UIView!
+    
+    let jokesModelController = JokeModelController.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        self.startActivityIndicator()
+        jokesModelController.retrieveContacts(completion: {
+            self.setNewJoke()
+            self.stopActivityIndicator()
+        })
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func setNewJoke() {
+        let warnign = 1
+        DispatchQueue.main.async {
+            if self.jokesModelController.jokesCount > 0 {
+                self.jokeText.text = self.jokesModelController.joke(at: 0).joke
+                //Remove used joke
+                self.jokesModelController.removeJoke(at: 0)
+            }
+        }
+    }
+    
+    func startActivityIndicator() {
+        self.activityIndicatorFrame.isHidden = false
+        self.activityIndicator.startAnimating()
+        self.view.isUserInteractionEnabled = false
+    }
+    
+    func stopActivityIndicator() {
+        DispatchQueue.main.async {
+            self.view.isUserInteractionEnabled = true
+            self.activityIndicator.stopAnimating()
+            self.activityIndicatorFrame.isHidden = true
+        }
+    }
 
-
+    @IBAction func crackJokeButton(_ sender: Any) {
+        self.setNewJoke()
+    }
 }
 
