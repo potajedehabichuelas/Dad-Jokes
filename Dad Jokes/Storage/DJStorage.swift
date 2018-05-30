@@ -26,15 +26,14 @@ class DJStorage: NSObject {
         
         do {
             let data = try PropertyListEncoder().encode(jokes)
-            let success = NSKeyedArchiver.archiveRootObject(data, toFile: jokesFilePath.path)
-            print(success ? "Successful save" : "Save Failed")
+            NSKeyedArchiver.archiveRootObject(data, toFile: jokesFilePath.path)
         } catch {
             print("Save Failed")
         }
     }
     
     class func retrieveJokes() -> [Joke] {
-        
+
         guard let data = NSKeyedUnarchiver.unarchiveObject(withFile: jokesFilePath.path) as? Data else { return [] }
         
         do {
