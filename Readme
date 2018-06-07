@@ -47,6 +47,6 @@ due to the fact that they are being saved as soon as they are downloaded & mappe
 We would have to block simultaneous writing/deletition operations -> append operations while performing remove operations 
 and the other way around. 
 
-Reading should be fine since we append by the end, and we read at the front, but still better to lock it as well to prevent
+Reading should be fine since we append by the end, and we read at the front, but it is still better to lock it as well, to prevent
 side effects.
       
