@@ -33,11 +33,20 @@ That's all I can think of for now. If you have any questions regarding anything 
 
 
 LastUpdated: 6/6/18
--Updated closure syntax as I realised I was missing a few details
--Updated README:
+-Updated closure syntax as I realised there was missing a few details, and I found & fixed a bug
 
 I've also realised there are quite a few erros when batch requesting (manually) jokes. The server returns bad gateway error: 
 Received error response (502 bad gateway)
 Which I could be related with dos protection, so the server does not get spammed. A small delay could be placed in between the 
 server calls (if that's the case), although again, ideally the best way to go would be for the server to allow batch requests.
+
+It would be interesting (probably necesary, more than interesting) to make the structure that holds the Jokes thread safe.
+due to the fact that they are being saved as soon as they are downloaded & mapped.
+
+(For now it's fine since there are not many jokes being saved simultaneusly)
+We would have to block simultaneous writing/deletition operations -> append operations while performing remove operations 
+and the other way around. 
+
+Reading should be fine since we append by the end, and we read at the front, but still better to lock it as well to prevent
+side effects.
       
