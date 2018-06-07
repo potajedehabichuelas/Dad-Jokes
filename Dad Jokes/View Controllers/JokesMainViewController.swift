@@ -21,7 +21,7 @@ class JokesMainViewController: UIViewController {
         super.viewDidLoad()
         
         self.startActivityIndicator()
-        jokesModelController.retrieveContacts(completion: { [weak self] in
+        jokesModelController.retrieveJokes(completion: { [weak self] in
             self?.setNewJoke()
             self?.stopActivityIndicator()
         })

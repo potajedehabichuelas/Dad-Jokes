@@ -29,7 +29,7 @@ class JokeModelController {
         }
     }
     
-    func retrieveContacts(completion: @escaping () -> Void) {
+    func retrieveJokes(completion: @escaping () -> Void) {
         //Retrieve Jokes
         self.jokes = DJStorage.retrieveJokes()
         //If we retrieved less than X jokes, we request a few more so we can be funny on time
