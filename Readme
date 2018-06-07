@@ -1,3 +1,5 @@
+
+
 Notes about project
 
 There shouldn't be any special needs to run this project.
@@ -30,3 +32,12 @@ There is a fairly simple UITest in there too, If we wanted to improve it somehow
 That's all I can think of for now. If you have any questions regarding anything in the project, please do get in touch.
 
 
+LastUpdated: 6/6/18
+-Updated closure syntax as I realised I was missing a few details
+-Updated README:
+
+I've also realised there are quite a few erros when batch requesting (manually) jokes. The server returns bad gateway error: 
+Received error response (502 bad gateway)
+Which I could be related with dos protection, so the server does not get spammed. A small delay could be placed in between the 
+server calls (if that's the case), although again, ideally the best way to go would be for the server to allow batch requests.
+      
