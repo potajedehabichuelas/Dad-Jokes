@@ -47,9 +47,9 @@ class JokeModelController {
         var jokesReceived = 0
         //This ideally would be achieved by requesting a batch of jokes, but server doesn't support pagination ?
         for _ in 0..<amount {
-            JokeRequestManager.sharedInstance.queryDadJoke(completion: { joke in
+            JokeRequestManager.sharedInstance.queryDadJoke(completion: { [weak self] joke in
                 guard let jk = joke, let id = jk.id, let jokeText = jk.joke, let link = jk.permalink else { return }
-                self.createJoke(id: id, text: jokeText, permaLink: link)
+                self?.createJoke(id: id, text: jokeText, permaLink: link)
                 jokesReceived += 1
                 if jokesReceived == amount {
                     completion()
