@@ -33,7 +33,6 @@ class DJStorage: NSObject {
     }
     
     class func retrieveJokes() -> [Joke] {
-
         guard let data = NSKeyedUnarchiver.unarchiveObject(withFile: jokesFilePath.path) as? Data else { return [] }
         
         do {

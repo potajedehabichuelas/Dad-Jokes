@@ -6,9 +6,18 @@
 //  Copyright © 2018 Daniel Bolivar herrera. All rights reserved.
 //
 
-class JokeModelController {
+protocol JokeControllerProtocol: class {
+    func checkJokesStorageAmount()
+    func jokesCount() -> Int
+    func retrieveJokes(completion: @escaping () -> Void)
+    func createJoke(id: String, text: String, permaLink: String)
+    func joke(at index: Int) -> Joke
+    func removeJoke(at index: Int)
+    func removeAllJokes()
+    func saveJokes()
+}
 
-    static let sharedInstance = JokeModelController()
+class JokeModelController: JokeControllerProtocol {
     
     private var jokes: [Joke] = [] {
         didSet {
@@ -18,7 +27,7 @@ class JokeModelController {
     
     private static let jokesRefillThreshold = 50
     
-    var jokesCount: Int {
+    func jokesCount() -> Int {
         return self.jokes.count
     }
     
@@ -40,7 +49,6 @@ class JokeModelController {
         } else {
             completion()
         }
-        
     }
     
     private func addNewJokes(amount: Int ,completion: @escaping () -> Void) {

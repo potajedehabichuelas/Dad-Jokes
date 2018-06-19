@@ -15,13 +15,13 @@ class JokesMainViewController: UIViewController {
     @IBOutlet weak var activityIndicator: NVActivityIndicatorView!
     @IBOutlet weak var activityIndicatorFrame: UIView!
     
-    let jokesModelController = JokeModelController.sharedInstance
+    var jokesDelegate: JokeControllerProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.startActivityIndicator()
-        jokesModelController.retrieveJokes(completion: { [weak self] in
+        self.jokesDelegate?.retrieveJokes(completion: { [weak self] in
             self?.setNewJoke()
             self?.stopActivityIndicator()
         })
@@ -33,13 +33,15 @@ class JokesMainViewController: UIViewController {
     }
     
     func setNewJoke() {
+        guard let jokesDelegate = self.jokesDelegate else { return }
+        
         DispatchQueue.main.async {
-            if self.jokesModelController.jokesCount > 0 {
-                self.jokeText.text = self.jokesModelController.joke(at: 0).joke
+            if jokesDelegate.jokesCount() > 0 {
+                self.jokeText.text = jokesDelegate.joke(at: 0).joke
                 //Remove used joke
-                self.jokesModelController.removeJoke(at: 0)
+                jokesDelegate.removeJoke(at: 0)
                 //Check if we might need to refill the cold jokes storage!
-                self.jokesModelController.checkJokesStorageAmount()
+                jokesDelegate.checkJokesStorageAmount()
             }
         }
     }
@@ -61,5 +63,7 @@ class JokesMainViewController: UIViewController {
     @IBAction func crackJokeButton(_ sender: Any) {
         self.setNewJoke()
     }
+    
+    // Mark : JokeModelController Protocol
 }
 
